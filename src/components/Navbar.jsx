@@ -42,14 +42,32 @@ export default function Navbar() {
 
 				<div className="flex items-center gap-5">
 					{navItems.map((item) => (
-						<div key={item.name} className="relative">
+						<div key={item.name} className="relative group">
 							<Link
 								href={item.href}
-								className="flex items-center gap-1 text-base font-medium text-gray-700 hover:text-blue-900 transition-colors"
+								className="flex items-center gap-1 text-base font-medium text-gray-700 hover:text-blue-900 transition-colors py-2"
 							>
 								{item.name}
-								{item.dropdown && <ChevronDown className="w-4 h-4" />}
+								{item.dropdown && (
+									<ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+								)}
 							</Link>
+
+							{item.dropdown && (
+								<div className="absolute top-full left-0 pt-1 hidden group-hover:block w-52">
+									<div className="bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden">
+										{item.dropdown.map((child) => (
+											<Link
+												key={child.name}
+												href={child.href}
+												className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+											>
+												{child.name}
+											</Link>
+										))}
+									</div>
+								</div>
+							)}
 						</div>
 					))}
 				</div>
