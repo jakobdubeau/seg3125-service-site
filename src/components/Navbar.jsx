@@ -43,15 +43,19 @@ export default function Navbar() {
 				<div className="flex items-center gap-5">
 					{navItems.map((item) => (
 						<div key={item.name} className="relative group">
-							<Link
-								href={item.href}
-								className="flex items-center gap-1 text-base font-medium text-gray-700 hover:text-blue-900 transition-colors py-2"
-							>
-								{item.name}
-								{item.dropdown && (
+							{item.dropdown ? (
+								<span className="flex items-center gap-1 text-base font-medium text-gray-700 hover:text-blue-900 transition-colors py-2 cursor-default select-none">
+									{item.name}
 									<ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
-								)}
-							</Link>
+								</span>
+							) : (
+								<Link
+									href={item.href}
+									className="flex items-center gap-1 text-base font-medium text-gray-700 hover:text-blue-900 transition-colors py-2"
+								>
+									{item.name}
+								</Link>
+							)}
 
 							{item.dropdown && (
 								<div className="absolute top-full left-0 pt-1 hidden group-hover:block w-52">
