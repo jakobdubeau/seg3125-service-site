@@ -62,7 +62,7 @@ export default function Footer() {
 			</div>
 
 			<div className="border-t border-blue-900 py-5 text-center text-blue-400 text-xs">
-				&copy; 2026 Smile Dental. All rights reserved.
+				&copy; 2026 Smile Dental. All rights reserved. Designed by Jakob Dubeau
 			</div>
 		</footer>
 	)
