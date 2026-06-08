@@ -33,7 +33,7 @@ const navItems = [
 
 export default function Navbar() {
 	return (
-		<nav className="bg-white border-b border-gray-100 sticky top-0 z-50">
+		<nav className="bg-white border-b border-gray-100 top-0 z-50">
 			<div className="px-48 py-6 flex items-center justify-between">
 				<Link href="/" className="flex items-center gap-2">
 					<Smile className="w-8 h-8 text-sky-500" />
